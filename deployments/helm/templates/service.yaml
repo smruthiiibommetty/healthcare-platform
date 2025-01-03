@@ -1,0 +1,44 @@
+# Service for User Management
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-management-service
+  labels:
+    app: user-management
+spec:
+  selector:
+    app: user-management
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+---
+# Service for Appointment Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: appointment-service
+  labels:
+    app: appointment-service
+spec:
+  selector:
+    app: appointment-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3001
+---
+# Service for Medical Records Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: medical-records-service
+  labels:
+    app: medical-records-service
+spec:
+  selector:
+    app: medical-records-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3002

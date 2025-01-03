@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: healthcare-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: healthcare.example.com
+    http:
+      paths:
+      - path: /user
+        pathType: Prefix
+        backend:
+          service:
+            name: user-management-service
+            port:
+              number: 80
+      - path: /appointment
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-service
+            port:
+              number: 80
+      - path: /records
+        pathType: Prefix
+        backend:
+          service:
+            name: medical-records-service
+            port:
+              number: 80

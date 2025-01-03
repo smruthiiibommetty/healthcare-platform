@@ -1,0 +1,4 @@
+apiVersion: v2
+name: healthcare-platform
+description: A healthcare platform with multiple services
+version: 0.1.0
